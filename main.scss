@@ -36,7 +36,7 @@ $rank-num: 10;
         background-color: $card-hover-bg;
     }
 
-    &:hover .extra {
+    &:hover .details__extra {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -47,7 +47,7 @@ $rank-num: 10;
 
     }
 
-    &:hover .photo {
+    &:hover .person__photo {
         border-radius: 60px;
     }
 
