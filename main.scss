@@ -1,1 +1,117 @@
+$card-wdth: 200px;
+$number-circle-size: 32px;
+$accent--clr: #2F4F4F;
+$rank--clr: #8B0000;
+$card-hover-bg: #EEEEEE;
+$rank-num: 10;
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.people {
+    display: grid;
+    gap: 30px 20px;
+    grid-template-columns: repeat(2, 200px);
+    justify-content: center;
+    padding: 30px;
+
+    @media screen and (min-width:1000px) {
+        grid-template-columns: repeat(4, 200px);
+
+    }
+}
+
+.person {
+    position: relative;
+    width: $card-wdth;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 1s linear;
+
+    &:hover {
+        width: 220px;
+        transform: scale(1.1);
+        background-color: $card-hover-bg;
+    }
+
+    &:hover .extra {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: $card-hover-bg;
+        width: 100%;
+        transform: scale(1.1);
+
+    }
+
+    &:hover .photo {
+        border-radius: 60px;
+    }
+
+    &__photo {
+
+        position: relative;
+        width: $card-wdth;
+        height: $card-wdth;
+        margin-bottom: 8px;
+        border-radius: 50%;
+        overflow: hidden;
+        transition: all 1;
+
+
+        img {
+            width: $card-wdth;
+            height: $card-wdth;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__rank {
+
+        position: absolute;
+        width: $number-circle-size;
+        height: $number-circle-size;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #fff;
+        color: $rank--clr;
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+
+.details {
+    text-align: center;
+    position: relative;
+
+    &__name {
+
+        display: block;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 9px;
+        color: $accent--clr;
+    }
+
+    &__extra {
+
+        position: absolute;
+        display: none;
+        width: 100%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
 
